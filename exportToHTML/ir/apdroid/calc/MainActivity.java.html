@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">ir.apdroid.calc; 
+ 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity; 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.widget.EditText; 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView; 
+</span><span class="s0">import </span><span class="s1">android.widget.Toast; 
+ 
+</span><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+ 
+    EditText n1,n2; 
+    TextView result; 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+ 
+        init(); 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">init(){ 
+        n1=(EditText)findViewById(R.id.editText1); 
+        n2=(EditText)findViewById(R.id.editText2); 
+        result=(TextView)findViewById(R.id.textView3); 
+    } 
+ 
+ 
+    </span><span class="s0">public void </span><span class="s1">add(View v){ 
+        </span><span class="s0">try </span><span class="s1">{ 
+            </span><span class="s0">int </span><span class="s1">x = Integer.parseInt(n1.getText().toString()); 
+            </span><span class="s0">int </span><span class="s1">y = Integer.parseInt(n2.getText().toString()); 
+            </span><span class="s0">int </span><span class="s1">z = x + y; 
+            result.setText(String.valueOf(z)); 
+        } 
+        </span><span class="s0">catch</span><span class="s1">(Exception e){ 
+            Toast.makeText(</span><span class="s0">this</span><span class="s1">, </span><span class="s2">&quot;خطا در اعداد ورودی &quot;</span><span class="s1">+</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">+e , Toast.LENGTH_LONG).show(); 
+        } 
+    } 
+ 
+} 
+</span></pre>
+</body>
+</html>
